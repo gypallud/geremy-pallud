@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gérémy Pallud — Consultant SEA & Digital Marketing</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Space Grotesk',sans-serif;background:#0a0f1a;color:#fff;min-height:100vh}
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 40px;border-bottom:1px solid rgba(255,255,255,0.06);background:#0a0f1a;position:sticky;top:0;z-index:10}
+.nav-logo{font-family:'Space Mono',monospace;font-size:15px;font-weight:700}
+.nav-logo span{color:#4ecca3}
+.nav-links{display:flex;gap:28px}
+.nav-links a{font-size:11px;color:rgba(255,255,255,0.5);text-decoration:none;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:color 0.2s}
+.nav-links a:hover{color:#4ecca3}
+.hero{padding:70px 40px 60px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1000px;margin:0 auto}
+.hero-tag{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#4ecca3;margin-bottom:14px;font-weight:600}
+.hero-name{font-family:'Space Mono',monospace;font-size:46px;font-weight:700;line-height:1.05;letter-spacing:-2px;margin-bottom:6px}
+.hero-name span{color:#4ecca3}
+.hero-title{font-size:12px;color:rgba(255,255,255,0.4);letter-spacing:2px;text-transform:uppercase;margin-bottom:22px}
+.hero-desc{font-size:13.5px;color:rgba(255,255,255,0.6);line-height:1.8;margin-bottom:28px;max-width:380px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{background:#4ecca3;color:#0a0f1a;padding:10px 22px;border-radius:6px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;border:none;font-family:'Space Grotesk',sans-serif;text-decoration:none;display:inline-block}
+.btn-secondary{background:transparent;color:#4ecca3;padding:10px 22px;border-radius:6px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;border:1px solid rgba(78,204,163,0.35);font-family:'Space Grotesk',sans-serif;text-decoration:none;display:inline-block}
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.stat-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:18px}
+.stat-val{font-family:'Space Mono',monospace;font-size:26px;font-weight:700;color:#4ecca3;line-height:1}
+.stat-label{font-size:11px;color:rgba(255,255,255,0.4);margin-top:6px;line-height:1.5}
+.divider{height:1px;background:rgba(255,255,255,0.06);margin:0 40px}
+.section{padding:52px 40px;max-width:1000px;margin:0 auto}
+.section-tag{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#4ecca3;font-weight:700;margin-bottom:8px}
+.section-title{font-family:'Space Mono',monospace;font-size:26px;font-weight:700;letter-spacing:-1px;margin-bottom:32px}
+.exp-item{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:22px 24px;margin-bottom:10px;transition:border-color 0.2s}
+.exp-item:hover{border-color:rgba(78,204,163,0.3)}
+.exp-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px}
+.exp-role{font-family:'Space Mono',monospace;font-size:15px;font-weight:700}
+.exp-date{font-size:11px;color:#4ecca3;background:rgba(78,204,163,0.1);padding:3px 10px;border-radius:20px;white-space:nowrap}
+.exp-company{font-size:11px;color:rgba(255,255,255,0.35);margin-bottom:14px;letter-spacing:1.5px;text-transform:uppercase}
+.exp-results{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.kpi-badge{background:rgba(78,204,163,0.1);border:1px solid rgba(78,204,163,0.25);color:#4ecca3;padding:4px 10px;border-radius:5px;font-size:11px;font-weight:700;font-family:'Space Mono',monospace}
+.sub-label{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin:16px 0 8px;font-weight:600}
+.bullet{font-size:12px;color:rgba(255,255,255,0.55);padding-left:14px;position:relative;line-height:1.6;margin-bottom:4px}
+.bullet::before{content:'→';position:absolute;left:0;color:#4ecca3;font-size:10px}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
+.tool-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:12px 14px;font-size:12px;color:rgba(255,255,255,0.7);display:flex;align-items:center;gap:8px}
+.tool-dot{width:6px;height:6px;border-radius:50%;background:#4ecca3;flex-shrink:0}
+.tool-dot.notion{background:#f0a500}
+.clients-note{font-size:11px;color:rgba(255,255,255,0.3);margin-bottom:20px;font-style:italic}
+.clients-grid{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-start}
+.client-item{position:relative}
+.client-pill{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:8px 16px;font-size:12px;color:rgba(255,255,255,0.7);font-weight:500;cursor:default;user-select:none;transition:all 0.2s}
+.client-item:hover .client-pill{background:rgba(78,204,163,0.1);border-color:rgba(78,204,163,0.4);color:#4ecca3}
+.story-box{max-height:0;overflow:hidden;transition:max-height 0.3s ease,opacity 0.3s ease;opacity:0;position:absolute;z-index:20;top:calc(100% + 6px);left:0}
+.client-item:hover .story-box{max-height:300px;opacity:1}
+.story-inner{background:#0d1f18;border:1px solid rgba(78,204,163,0.25);border-radius:8px;padding:14px 16px;width:270px;box-shadow:0 8px 32px rgba(0,0,0,0.5)}
+.story-sector{font-size:9px;color:rgba(255,255,255,0.3);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px}
+.story-text{font-size:11.5px;color:rgba(255,255,255,0.65);line-height:1.65}
+.story-kpis{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.story-kpi{font-family:'Space Mono',monospace;font-size:10px;font-weight:700;color:#4ecca3;background:rgba(78,204,163,0.1);border:1px solid rgba(78,204,163,0.2);padding:2px 8px;border-radius:4px}
+.contact-block{background:rgba(78,204,163,0.06);border:1px solid rgba(78,204,163,0.15);border-radius:12px;padding:28px 32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+.contact-info{display:flex;flex-direction:column;gap:8px}
+.contact-line{font-size:13px;color:rgba(255,255,255,0.7);display:flex;align-items:center;gap:8px}
+.footer-bottom{padding:20px 40px;border-top:1px solid rgba(255,255,255,0.05);display:flex;justify-content:space-between}
+.footer-text{font-size:11px;color:rgba(255,255,255,0.25)}
+@media(max-width:700px){
+  .hero{grid-template-columns:1fr;padding:40px 20px}
+  .hero-name{font-size:32px}
+  .section{padding:36px 20px}
+  nav{padding:14px 20px}
+  .divider{margin:0 20px}
+  .contact-block{flex-direction:column}
+  .footer-bottom{flex-direction:column;gap:8px;padding:20px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">G.<span>PALLUD</span></div>
+  <div class="nav-links">
+    <a href="#profil">Profil</a>
+    <a href="#exp">Expériences</a>
+    <a href="#outils">Outils</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<div class="hero" id="profil">
+  <div>
+    <div class="hero-tag">Disponible — Montpellier</div>
+    <div class="hero-name">Gérémy<br><span>Pallud</span></div>
+    <div class="hero-title">Consultant SEA &amp; Digital Marketing</div>
+    <p class="hero-desc">4 ans d'expérience en agence. Pilotage de 25 comptes simultanés. Créateur d'outils d'automatisation IA appliqués au SEA. Orienté résultats &amp; impact mesurable.</p>
+    <div class="hero-btns">
+      <a href="mailto:gypallud@gmail.com" class="btn-primary">Me contacter ↗</a>
+      <a href="#exp" class="btn-secondary">Voir mes résultats</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat-card"><div class="stat-val">25</div><div class="stat-label">comptes clients gérés simultanément</div></div>
+    <div class="stat-card"><div class="stat-val">-50%</div><div class="stat-label">réduction CPA Viasanté (AG2R)</div></div>
+    <div class="stat-card"><div class="stat-val">+40%</div><div class="stat-label">CA digital Cegos à budget constant</div></div>
+    <div class="stat-card"><div class="stat-val">+20%</div><div class="stat-label">hausse des conversions Viasanté</div></div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section" id="exp">
+  <div class="section-tag">Parcours</div>
+  <div class="section-title">Expériences</div>
+
+  <div class="exp-item">
+    <div class="exp-header">
+      <div class="exp-role">Consultant SEA</div>
+      <div class="exp-date">2022 — 2026</div>
+    </div>
+    <div class="exp-company">JVWEB · CDI · Montpellier</div>
+    <div class="exp-results">
+      <span class="kpi-badge">-50% CPA</span>
+      <span class="kpi-badge">+20% conversions</span>
+      <span class="kpi-badge">+40% CA digital</span>
+      <span class="kpi-badge">25 comptes simultanés</span>
+    </div>
+    <div class="sub-label">Résultats clients</div>
+    <div class="bullet">Viasanté (AG2R) — optimisation lead gen : -50% CPA + +20% conversions</div>
+    <div class="bullet">Cegos (leader européen formation pro) — +40% CA digital à budget constant sur 12 mois</div>
+    <div class="bullet">Philibert — lancement stratégie digitale A à Z, aujourd'hui leader sur son marché</div>
+    <div class="bullet">Petit Bateau — nouveau record de CA e-commerce chaque année depuis la collaboration</div>
+    <div class="bullet">Îles de Guadeloupe — campagne YouTube & Social Ads France + Canada : dizaines de M de vues</div>
+    <div class="sub-label">Innovation & IA</div>
+    <div class="bullet">Outil budgétaire dynamique avec gestion saisonnière : 3 à 4h économisées par mois / account manager</div>
+    <div class="bullet">Outil de segmentation automatique selon performance en temps réel</div>
+    <div class="bullet">Outil de pilotage saisonnier reprenant le contrôle sur la diffusion algorithmique</div>
+  </div>
+
+  <div class="exp-item">
+    <div class="exp-header">
+      <div class="exp-role">SEO Manager Junior</div>
+      <div class="exp-date">2020 — 2022</div>
+    </div>
+    <div class="exp-company">APPVIZER · Alternance</div>
+    <div class="bullet">Audit technique, analyse sémantique, stratégie de contenu SEO</div>
+    <div class="bullet">Rédaction web optimisée et gestion du trafic organique</div>
+    <div class="bullet">Analyse de données et reporting de performance</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section" id="outils">
+  <div class="section-tag">Stack</div>
+  <div class="section-title">Outils &amp; Plateformes</div>
+  <div class="sub-label">Publicité &amp; Analytics</div>
+  <div class="tools-grid" style="margin-bottom:16px">
+    <div class="tool-card"><span class="tool-dot"></span>Google Ads</div>
+    <div class="tool-card"><span class="tool-dot"></span>Google Editor</div>
+    <div class="tool-card"><span class="tool-dot"></span>Google Analytics</div>
+    <div class="tool-card"><span class="tool-dot"></span>Google Tag Manager</div>
+    <div class="tool-card"><span class="tool-dot"></span>Microsoft Ads</div>
+    <div class="tool-card"><span class="tool-dot"></span>Meta Ads</div>
+    <div class="tool-card"><span class="tool-dot"></span>Merchant Center</div>
+  </div>
+  <div class="sub-label">Reporting &amp; Data</div>
+  <div class="tools-grid" style="margin-bottom:16px">
+    <div class="tool-card"><span class="tool-dot"></span>Looker Studio</div>
+    <div class="tool-card"><span class="tool-dot"></span>SEMrush</div>
+    <div class="tool-card"><span class="tool-dot"></span>Ahrefs</div>
+    <div class="tool-card"><span class="tool-dot"></span>Suite Microsoft Office</div>
+    <div class="tool-card"><span class="tool-dot notion"></span>PowerBI — notions</div>
+  </div>
+  <div class="sub-label">Web &amp; CMS</div>
+  <div class="tools-grid">
+    <div class="tool-card"><span class="tool-dot notion"></span>WordPress — notions</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section">
+  <div class="section-tag">Références — sélection</div>
+  <div class="section-title">Clients</div>
+  <div class="clients-note">Passez la souris sur un client pour découvrir la collaboration</div>
+  <div class="clients-grid" id="clients-grid"></div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section" id="contact">
+  <div class="section-tag">Me contacter</div>
+  <div class="section-title">Contact</div>
+  <div class="contact-block">
+    <div class="contact-info">
+      <div class="contact-line">📍 Montpellier, Occitanie</div>
+      <div class="contact-line">📞 07 49 62 60 43</div>
+      <div class="contact-line">✉️ gypallud@gmail.com</div>
+    </div>
+    <a href="mailto:gypallud@gmail.com" class="btn-primary">M'envoyer un email ↗</a>
+  </div>
+</div>
+
+<div class="footer-bottom">
+  <div class="footer-text">Gérémy Pallud · Portfolio Digital · 2026</div>
+  <div class="footer-text">Consultant SEA &amp; Digital Marketing · Montpellier</div>
+</div>
+
+<script>
+const clients = [
+  {name:"Viasanté (AG2R)",sector:"Mutuelle & Santé",text:"Refonte complète de la stratégie d'acquisition lead. Optimisation des campagnes Search et Display pour réduire le coût par lead tout en augmentant les volumes.",kpis:["-50% CPA","+20% conversions"]},
+  {name:"Cegos",sector:"Formation pro — Leader européen",text:"Accompagnement sur la croissance du CA digital à budget constant. Restructuration des campagnes et pilotage saisonnier pour maximiser le retour sur investissement.",kpis:["+40% CA digital","Budget constant"]},
+  {name:"Philibert",sector:"Jeux de société — E-commerce",text:"Lancement de la stratégie digitale de A à Z. Philibert est aujourd'hui leader sur son marché, générant plusieurs millions d'euros de CA via le digital.",kpis:["Lancement A à Z","Leader marché","Plusieurs M€ CA"]},
+  {name:"Petit Bateau",sector:"Mode enfant — E-commerce",text:"Pilotage des campagnes Search et Shopping. Nouveau record de chiffre d'affaires atteint chaque année depuis le démarrage de la collaboration.",kpis:["Record CA annuel","Croissance continue"]},
+  {name:"Îles de Guadeloupe",sector:"Tourisme — Office de tourisme",text:"Campagne de notoriété multi-marchés (France + Canada) via YouTube et Social Ads. Dizaines de millions de vues générées avant les pics saisonniers.",kpis:["Dizaines de M de vues","France + Canada"]},
+  {name:"Provalliance",sector:"Coiffure — 1er groupe français",text:"Accompagnement du leader français de la coiffure (Franck Provost, Jean-Louis David, Dessange...) sur ses campagnes d'acquisition digitale multi-marques.",kpis:["Multi-marques","Leader France"]},
+  {name:"Adagio (Groupe Accor)",sector:"Hôtellerie — Groupe Accor",text:"Pilotage des campagnes SEA pour l'enseigne d'appart-hôtels du groupe Accor. Stratégie Search avec ciblage géographique et saisonnier.",kpis:["Search & Display","Groupe Accor"]},
+  {name:"ACS Assurance",sector:"Assurance voyage & expatriés",text:"Campagnes d'acquisition lead sur le Search pour une clientèle internationale. Optimisation des enchères sur un marché de niche à forte valeur.",kpis:["Lead generation","Marché international"]},
+  {name:"Afnor Groupe",sector:"Certification & Formation",text:"Pilotage des campagnes SEA pour l'organisme de certification de référence en France. Stratégie multi-produits couvrant formation, certification et audit.",kpis:["Multi-produits","B2B & B2C"]},
+  {name:"CityGo",sector:"Covoiturage & Mobilité",text:"Stratégie d'acquisition digitale pour la plateforme de covoiturage. Campagnes Search et Social Ads orientées inscription et téléchargement d'application.",kpis:["App install","Search & Social"]},
+  {name:"Cuir City",sector:"Maroquinerie — E-commerce",text:"Pilotage des campagnes Shopping et Search. Optimisation du flux produits et des enchères pour maximiser le ROAS.",kpis:["Shopping","ROAS optimisé"]},
+  {name:"Hellio",sector:"Rénovation énergétique",text:"Campagnes lead generation pour un acteur majeur de la rénovation énergétique. Stratégie Search axée sur les aides CEE pour capter une demande qualifiée.",kpis:["Lead gen","CEE & rénovation"]},
+  {name:"Intermèdes",sector:"Voyages culturels",text:"Accompagnement d'un voyagiste spécialisé dans les voyages culturels. Campagnes SEA saisonnières et Display pour toucher une clientèle affinitaire.",kpis:["Saisonnier","Display & Search"]}
+];
+
+const grid = document.getElementById('clients-grid');
+clients.forEach(cl => {
+  const item = document.createElement('div');
+  item.className = 'client-item';
+  item.innerHTML = `
+    <div class="client-pill">${cl.name}</div>
+    <div class="story-box">
+      <div class="story-inner">
+        <div class="story-sector">${cl.sector}</div>
+        <div class="story-text">${cl.text}</div>
+        <div class="story-kpis">${cl.kpis.map(k=>`<span class="story-kpi">${k}</span>`).join('')}</div>
+      </div>
+    </div>`;
+  grid.appendChild(item);
+});
+
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const id = a.getAttribute('href').slice(1);
+    document.getElementById(id)?.scrollIntoView({behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>
